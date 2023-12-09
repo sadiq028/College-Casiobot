@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body >
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <li><a class="navbar-brand" href="{{ url_for('home') }}"><img src="http://127.0.0.1:5000/static/images/logo1.jpeg" style="width: 200px; height: 35px;"></a></li>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{{ url_for('home') }}"> Home</a></li>
+        <li><a href="{{ url_for('tour') }}"> College tour</a></li>
+        <li><a href="{{ url_for('audio') }}">Audio guide</a></li>
+        <li><a href="{{ url_for('notice') }}">Notice</a></li>
+        <li><a href="{{ url_for('voice') }}">Voice Query</a></li>
+        <li><a href="{{ url_for('departments') }}">Departments </a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <section id="hero" class="d-flex flex-column justify-content-end align-items-center">
+    <div id="heroCarousel" data-bs-interval="5000" class="container carousel carousel-fade" data-bs-ride="carousel">
+
+      <div class="carousel-item active">
+        <div class="carousel-container">
+          {% if message %}
+          <h2 class="animate__animated animate__fadeInDown">{{message}}</h2>
+          {% endif %}
+          {% if image %}
+            <img src="{{image}}" style="width: 25%">
+          {% endif %}
+          </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
+

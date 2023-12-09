@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        body{
+    background-image: url("https://i1.wp.com/www.learnesl.net/wp-content/uploads/2020/09/Graduation.jpg?fit=1200%2C800&ssl=1");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+  }
+
+        .panel-footer {
+    background-color: #fff !important;
+  }
+  .panel-footer h3 {
+    font-size: 32px;
+  }
+  .panel-footer h4 {
+    font-size: 14px;
+  }
+  .panel-footer .btn {
+    margin: 15px 0;
+    background-color: #2d2d30;
+    color: #fff;
+  }
+  .panel {
+    border: 1px solid #2d2d30; 
+    border-radius:0 !important;
+    transition: box-shadow 0.5s;
+  }
+  .panel:hover {
+    box-shadow: 5px 0px 40px rgba(255, 255, 255, 0.3);
+  }
+  .panel-footer .btn:hover {
+    border: 1px solid #2d2d30;
+    background-color: #fff !important;
+    color: #000000;
+  }
+  #Title > h1, #Title > h2{
+    color: white;
+  }
+  .panel-footer img{
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    border: 1px solid black;
+  }
+
+    </style>
+</head>
+<body>
+
+
+  <nav class="navbar navbar-inverse ">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <li><a class="navbar-brand" href="{{ url_for('home') }}"><img src="http://127.0.0.1:5000/static/images/logo1.jpeg" style="width: 200px; height: 35px;"></a></li>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{{ url_for('home') }}"> Home</a></li>
+        <li><a href="{{ url_for('tour') }}"> College tour</a></li>
+        <li><a href="{{ url_for('notice') }}">Notice</a></li>
+        <li><a href="{{ url_for('departments') }}">Departments</a></li>
+        <li><a href="{{ url_for('audio') }}">Audio guide</a></li>
+        <li><a href="{{ url_for('voice') }}">Voice Query</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+<div class="container">
+
+    <div class="text-center" id="Title">
+      <h1> COLLEGE CASIO BOT</h1>
+    </div>
+
+      <div class="col-sm-3 col-xs-6">
+        <div class="panel panel-default text-center">
+          <div class="panel-footer">
+            <img src="{{ url_for('static', filename='2nd_floor/Fire_alarms/Capture.JPG') }}" alt="">
+            <h4>Fire Alarms</h4>
+            <a href="{{ url_for('secondfloor', Name='Fire_alarms') }}"><button type="button" class="btn btn-info btn-lg" >Go &#8594</button></a>
+          </div>
+        </div>      
+      </div>  
+
+      <div class="col-sm-3 col-xs-6">
+        <div class="panel panel-default text-center">
+          <div class="panel-footer">
+            <img src="{{ url_for('static', filename='2nd_floor/HOD_Rooms/Capture.JPG') }}" alt="">
+            <h4>HOD rooms</h4>
+            <a href="{{ url_for('secondfloor', Name='HOD_Rooms') }}"><button type="button" class="btn btn-info btn-lg" >Go &#8594</button></a>
+          </div>
+        </div>      
+      </div>     
+
+      <div class="col-sm-3 col-xs-6">
+        <div class="panel panel-default text-center">
+          <div class="panel-footer">
+            <img src="{{ url_for('static', filename='2nd_floor/Lecture_Halls/Capture.JPG') }}" alt="">
+            <h4>Lecture Halls</h4>
+            <a href="{{ url_for('secondfloor', Name='Lecture_Halls') }}"><button type="button" class="btn btn-info btn-lg" >Go &#8594</button></a>
+          </div>
+        </div>      
+      </div>  
+
+      <div class="col-sm-3 col-xs-6">
+        <div class="panel panel-default text-center">
+          <div class="panel-footer">
+            <img src="{{ url_for('static', filename='2nd_floor/Library/Capture.JPG') }}" alt="">
+            <h4>Library</h4>
+            <a href="{{ url_for('secondfloor', Name='Library') }}"><button type="button" class="btn btn-info btn-lg" >Go &#8594</button></a>
+          </div>
+        </div>      
+      </div>
+
+      <div class="col-sm-3 col-xs-6">
+        <div class="panel panel-default text-center">
+          <div class="panel-footer">
+            <img src="{{ url_for('static', filename='2nd_floor/Main_Entrance/Capture.JPG') }}" alt="">
+            <h4>Main Entrance</h4>
+            <a href="{{ url_for('secondfloor', Name='Main_Entrance') }}"><button type="button" class="btn btn-info btn-lg" >Go &#8594</button></a>
+          </div>
+        </div>      
+      </div>  
+
+      <div class="col-sm-3 col-xs-6">
+        <div class="panel panel-default text-center">
+          <div class="panel-footer">
+            <img src="{{ url_for('static', filename='2nd_floor/rest_room/Capture.JPG') }}" alt="">
+            <h4>Rest rooms</h4>
+            <a href="{{ url_for('secondfloor', Name='rest_room') }}"><button type="button" class="btn btn-info btn-lg" >Go &#8594</button></a>
+          </div>
+        </div>      
+      </div>     
+
+      <div class="col-sm-3 col-xs-6">
+        <div class="panel panel-default text-center">
+          <div class="panel-footer">
+            <img src="{{ url_for('static', filename='2nd_floor/Staff_Rooms/Capture.jpg') }}" alt="">
+            <h4>Staff rooms</h4>
+            <a href="{{ url_for('secondfloor', Name='Staff_Rooms') }}"><button type="button" class="btn btn-info btn-lg" >Go &#8594</button></a>
+          </div>
+        </div>      
+      </div>  
+
+    </div>
+
+{% block content %}
+{% if img %}
+    <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content modal-md">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          {% for i in img %}
+          <img src="{{i}}" width="100%">
+          {% endfor %}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    $(window).on('load', function() {
+        $('#myModal').modal('show');
+    });
+</script>
+
+  {% endif %}
+  {% endblock content %}
+</body>
+</html>

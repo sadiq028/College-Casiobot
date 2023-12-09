@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body >
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <li><a class="navbar-brand" href="{{ url_for('home') }}"><img src="http://127.0.0.1:5000/static/images/logo1.jpeg" style="width: 200px; height: 35px;"></a></li>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{{ url_for('home') }}"> Home</a></li>
+        <li><a href="{{ url_for('tour') }}"> College tour</a></li>
+        <li><a href="{{ url_for('notice') }}">Notice</a></li>
+        <li><a href="{{ url_for('departments') }}">Departments</a></li>
+        <li><a href="{{ url_for('audio') }}">Audio guide</a></li>
+        <li><a href="/demo">Voice Query</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container" id="content">
+      <center><h1>Submit your query through voice</h1></center>
+        {% block content %}
+
+        {% if message %}
+            <center><h2 style="margin-top: 200px;">{{ message }}</h2></center>
+        {% endif %}
+        {% if rows %}
+      
+          <table id="customers">
+            {% for row in rows[:1] %}
+            <tr>
+            {% for col in row %}
+                
+                    <th>{{ col }}</th>  
+                    {% endfor %}      
+                </tr>
+              {% endfor %}
+      
+            {% for row in rows[1:] %}
+            <tr>
+            {% for col in row %}
+                
+                    <td>{{ col }}</td>  
+                    {% endfor %}      
+                </tr>
+              {% endfor %}   
+          </table>
+      
+        {% endif %}
+
+
+        {% if images %}
+        {% for img in images %}
+        <img src="{{img}}" height="500" width="100%"> <br>
+        {% endfor %}
+        {% endif %}
+      
+        {% if docs %}
+        {% for doc in docs %}
+        <embed src="{{doc}}" height="500" width="100%">
+          {% endfor %}
+          {% endif %}
+
+          {% if videos %}
+          {% for video in videos %}
+          <video width="100%" height="500" autoplay >
+            <source src="{{ video }}" type="video/mp4">
+          </video>
+            {% endfor %}
+            {% endif %}
+
+        {% endblock content %}
+</div>
+</body>
+</html>
+

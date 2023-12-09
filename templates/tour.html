@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        body{
+    background-image: url("https://i1.wp.com/www.learnesl.net/wp-content/uploads/2020/09/Graduation.jpg?fit=1200%2C800&ssl=1");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+  }
+video{
+  width: 70%;
+}
+h1{
+  color: white;
+}
+    </style>
+</head>
+<body>
+
+
+  <nav class="navbar navbar-inverse ">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <li><a class="navbar-brand" href="{{ url_for('home') }}"><img src="http://127.0.0.1:5000/static/images/logo1.jpeg" style="width: 200px; height: 35px;"></a></li>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{{ url_for('home') }}"> Home</a></li>
+        <li><a href="{{ url_for('tour') }}"> College tour</a></li>
+        <li><a href="{{ url_for('notice') }}">Notice</a></li>
+        <li><a href="{{ url_for('audio') }}">Audio guide</a></li>
+        <li><a href="{{ url_for('departments') }}">Departments</a></li>
+        <li><a href="{{ url_for('voice') }}">Voice Query</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+<div class="container">
+
+    <div class="text-center" id="Title">
+      <h1> COLLEGE TOUR</h1>
+    </div>
+
+      <center>
+        <video autoplay controls>
+          <source src="http://127.0.0.1:5000/static/tour.mp4" type="video/mp4">
+      </video>
+      </center>
+</body>
+</html>
